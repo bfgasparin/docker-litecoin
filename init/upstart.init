@@ -1,0 +1,15 @@
+# Copy to /etc/init/docker-litecoind.conf
+description "Docker container for litecoind p2p node"
+start on filesystem and started docker
+stop on runlevel [!2345]
+respawn
+pre-start script
+  # Clean-up if left behind
+  docker rm -f litecoind-node || true
+
+  # Attempt to always update and fail silently if the network isn't ready
+  docker pull brunogasparin/litecoind || true
+end script
+script
+  exec docker run --rm -v litecoind-data:/litecoin --name=litecoind-node --rm -p 8333:8333 -p 127.0.0.1:8332:8332 brunogasparin/litecoind
+end script

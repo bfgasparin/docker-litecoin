@@ -1,0 +1,14 @@
+#!/bin/bash
+
+set -ex
+
+# Generate litecoin.conf
+btc_init
+
+if [ $# -gt 0 ]; then
+    args=("$@")
+else
+    args=("-rpcallowip=::/0")
+fi
+
+exec litecoind "${args[@]}"
