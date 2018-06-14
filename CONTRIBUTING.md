@@ -18,7 +18,7 @@ If you have a special feature, you're likely to try but it will likely be reject
 
 ## Tests
 
-In an effort to not repeat bugs (and break less popular features), unit tests are run on [Travis CI](https://travis-ci.org/brunogasparin/docker-litecoind).  The goal of the tests are to be simple and to be placed in the `test` directory where it will be automatically run.
+In an effort to not repeat bugs (and break less popular features), unit tests ware created. The goal of the tests are to be simple and to be placed in the `test` directory where it will be automatically run.
 
 See [test directory](https://github.com/brunogasparin/docker-litecoind/tree/master/test) for details.
 
