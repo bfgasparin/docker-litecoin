@@ -15,10 +15,10 @@ RUN groupadd -g ${GROUP_ID} litecoin \
 	&& useradd -u ${USER_ID} -g litecoin -s /bin/bash -m -d /litecoin litecoin
 
 RUN apt-get update && apt-get install -y wget && \
-    wget https://download.litecoin.org/litecoin-0.16.0/linux/litecoin-0.16.0-x86_64-linux-gnu.tar.gz && \
-    tar -zvxf litecoin-0.16.0-x86_64-linux-gnu.tar.gz && \
-    mv litecoin-0.16.0/* /litecoin && \
-    rm -R litecoin-0.16.0 && rm litecoin-0.16.0-x86_64-linux-gnu.tar.gz && \
+    wget https://download.litecoin.org/litecoin-0.16.3/linux/litecoin-0.16.3-x86_64-linux-gnu.tar.gz && \
+    tar -zvxf litecoin-0.16.3-x86_64-linux-gnu.tar.gz && \
+    mv litecoin-0.16.3/* /litecoin && \
+    rm -R litecoin-0.16.3 && rm litecoin-0.16.3-x86_64-linux-gnu.tar.gz && \
     cp /litecoin/bin/* /usr/local/bin
 
 # grab gosu for easy step-down from root
